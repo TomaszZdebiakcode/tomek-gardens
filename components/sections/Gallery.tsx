@@ -6,11 +6,7 @@ export default function Gallery() {
     return (
         <section
             id="gallery"
-            className="py-40"
-            style={{
-                background:
-                    "radial-gradient(circle at top,#050907 0%,#030504 50%,#010201 100%)",
-            }}
+            className="bg-[#050907] py-24 lg:py-40"
         >
             <Container>
 
@@ -20,7 +16,20 @@ export default function Gallery() {
                         Nasze realizacje
                     </span>
 
-                    <h2 className="mt-6 font-heading text-[70px] leading-[0.92] tracking-[-0.045em] text-[#c5d2ca]">
+                    <h2
+                        className="
+    mx-auto
+    max-w-[900px]
+    font-heading
+    text-[46px]
+    sm:text-[56px]
+    md:text-[64px]
+    lg:text-[70px]
+    leading-[0.92]
+    tracking-[-0.045em]
+    text-[#c5d2ca]
+  "
+                    >
                         Zobacz efekty prac
                         <br />
                         ogrodniczych przed i po.

@@ -7,11 +7,7 @@ export default function Services() {
     return (
         <section
             id="services"
-            className="py-24 lg:py-40"
-            style={{
-                background:
-                    "radial-gradient(circle at top, #0b1c14 0%, #08140e 35%, #06100b 100%)",
-            }}
+            className="bg-[#07140d] py-24 lg:py-40"
         >
             <Container>
 
