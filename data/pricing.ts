@@ -11,14 +11,14 @@ export const pricing = [
         title: "Koszenie trawnika",
         price: "od 150 zł",
         description:
-            "Wycena zależy od powierzchni, wysokości trawy i dostępu do ogrodu.",
+            "Cena zależy od powierzchni, wysokości trawy oraz dostępu do ogrodu.",
     },
     {
         icon: Trees,
         title: "Przycinanie żywopłotu",
-        price: "od 20 zł / mb",
+        price: "od 20 zł",
         description:
-            "Cena zależy od wysokości żywopłotu oraz ilości materiału do wywozu.",
+            "Cena za metr bieżący żywopłotu. Ostateczny koszt zależy od wysokości i ilości materiału do wywozu.",
     },
     {
         icon: Sprout,

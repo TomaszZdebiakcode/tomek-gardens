@@ -21,8 +21,16 @@ export default function PricingCard({
                 strokeWidth={1.8}
                 className="mb-7 text-[#b8d8a7]"
             />
-
-            <h3 className="text-[32px] font-bold text-white">
+            <h3
+                className="
+        min-h-[72px]
+        font-heading
+        text-[32px]
+        font-semibold
+        leading-[1.15]
+        text-white
+    "
+            >
                 {title}
             </h3>
 
@@ -30,7 +38,7 @@ export default function PricingCard({
                 {price}
             </div>
 
-            <p className="mt-7 flex-1 text-[18px] leading-8 text-white/65">
+            <p className="min-h-[130px] mt-7 flex-1 text-[18px] leading-8 text-white/65">
                 {description}
             </p>
 
