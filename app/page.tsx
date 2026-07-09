@@ -5,6 +5,8 @@ import Gallery from "@/components/sections/Gallery";
 import Pricing from "@/components/sections/Pricing";
 import Reviews from "@/components/sections/Reviews";
 import Features from "@/components/sections/Features";
+import Process from "@/components/sections/Process";
+import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <Pricing />
       <Reviews />
       <Features />
+      <Process />
+      <Contact />
     </>
   );
 }
