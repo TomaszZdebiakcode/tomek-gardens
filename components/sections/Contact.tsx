@@ -10,11 +10,26 @@ export default function Contact() {
         >
             <Container>
 
-                <div className="grid gap-8 lg:grid-cols-2">
+                <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
 
                     {/* LEFT */}
 
-                    <div className="rounded-[24px] bg-[#143326] p-5 sm:p-7 lg:rounded-[36px] lg:p-10">
+                    <div
+                        className="
+        mx-auto
+        w-full
+        max-w-[280px]
+        rounded-[24px]
+        bg-[#143326]
+        p-4
+        sm:max-w-[340px]
+        sm:p-7
+        lg:mx-0
+        lg:max-w-none
+        lg:rounded-[36px]
+        lg:p-10
+    "
+                    >
 
                         <span className="text-[14px] font-semibold text-[#b8d8a7] sm:text-[15px]">
                             Bezpłatna wycena
@@ -55,14 +70,12 @@ export default function Contact() {
                         </p>
 
                         <div className="mt-8 space-y-3 sm:mt-10 sm:space-y-4">
-
                             {contactInfo.map((item) => (
                                 <ContactInfoCard
                                     key={item.title}
                                     {...item}
                                 />
                             ))}
-
                         </div>
 
                     </div>
@@ -71,12 +84,18 @@ export default function Contact() {
 
                     <form
                         className="
+        mx-auto
+        w-full
+        max-w-[300px]
         rounded-[24px]
         border
         border-white/10
         bg-[#0d1c14]
-        p-5
+        p-4
+        sm:max-w-[340px]
         sm:p-7
+        lg:mx-0
+        lg:max-w-none
         lg:rounded-[36px]
         lg:p-10
     "
@@ -135,64 +154,41 @@ export default function Contact() {
 
                     </form>
 
-                </div>
 
+
+
+
+                </div>
                 {/* MAP */}
 
-                <div className="mt-10 rounded-[36px] border border-white/10 bg-[#0d1c14] p-8 lg:p-10">
-
-                    <div className="text-center">
-
-                        <h3
-                            className="
-        mt-4
-        font-heading
-        text-[30px]
-        leading-[1.15]
-        text-white
-        sm:text-[38px]
-        lg:text-[56px]
+                <div
+                    className="
+        mx-auto
+        mt-10
+        w-full
+        max-w-[280px]
+        overflow-hidden
+        rounded-[28px]
+        border
+        border-white/10
+        lg:max-w-full
     "
-                        >
-                            Działamy na terenie
-                            województwa
-                            <br />
+                >
 
-                            <span className="sm:hidden">
-                                zachodnio-
-                                <br />
-                                pomorskiego.
-                            </span>
-
-                            <span className="hidden sm:inline">
-                                zachodniopomorskiego.
-                            </span>
-                        </h3>
-
-
-                    </div>
-
-                    {/* MAP */}
-
-                    <div className="mt-10 overflow-hidden rounded-[28px] border border-white/10">
-
-                        <iframe
-                            src="https://www.google.com/maps?q=województwo+zachodniopomorskie&output=embed"
-                            width="100%"
-                            height="380"
-                            loading="lazy"
-                            className="border-0"
-                        />
-
-                    </div>
-
-
-
+                    <iframe
+                        src="https://www.google.com/maps?q=województwo+zachodniopomorskie&output=embed"
+                        width="100%"
+                        height="380"
+                        loading="lazy"
+                        className="border-0"
+                    />
 
                 </div>
 
             </Container>
-        </section>
+
+
+        </section >
     );
 }
 
