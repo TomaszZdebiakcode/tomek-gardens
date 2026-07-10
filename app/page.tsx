@@ -8,6 +8,9 @@ import Features from "@/components/sections/Features";
 import Process from "@/components/sections/Process";
 import Contact from "@/components/sections/Contact";
 import FAQ from "@/components/sections/FAQ";
+import DeveloperCTA from "@/components/sections/DeveloperCTA";
+import Footer from "@/components/layout/Footer";
+import { Layout } from "lucide-react";
 
 export default function Home() {
   return (
@@ -22,6 +25,8 @@ export default function Home() {
       <Process />
       <Contact />
       <FAQ />
+      <DeveloperCTA />
+      <Footer />
     </>
   );
 }

@@ -6,7 +6,7 @@ export default function FAQ() {
     return (
         <section
             id="faq"
-            className="bg-[#1d3929] py-24 lg:py-40"
+            className="bg-[#163021] py-24 lg:py-40"
         >
 
             <Container>
