@@ -10,7 +10,7 @@ export default function Hero() {
             {/* Background */}
 
             <Image
-                src="/images/hero/hero.jpg"
+                src="/images/hero/IMG_2730.webp"
                 alt="Tomek Gardens"
                 fill
                 priority

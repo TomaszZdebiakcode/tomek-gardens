@@ -3,9 +3,14 @@ import Image from "next/image";
 type Props = {
     image: string;
     title: string;
+    position?: string;
 };
 
-export default function GalleryCard({ image, title }: Props) {
+export default function GalleryCard({
+    image,
+    title,
+    position,
+}: Props) {
     return (
         <article className="group relative overflow-hidden rounded-[30px]">
             <Image
@@ -13,7 +18,7 @@ export default function GalleryCard({ image, title }: Props) {
                 alt={title}
                 width={650}
                 height={500}
-                className="h-[360px] w-full object-cover transition duration-700 group-hover:scale-105"
+                className={`h-[360px] w-full object-cover ${position ?? "object-center"} transition duration-700 group-hover:scale-105`}
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />

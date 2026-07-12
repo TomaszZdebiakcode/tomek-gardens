@@ -1,26 +1,27 @@
 export const gallery = [
     {
-        image: "/images/gallery/gallery1.jpg",
+        image: "/images/gallery/IMG_5143.webp",
         title: "Przed koszeniem",
+        position: "object-top",
     },
     {
-        image: "/images/gallery/gallery2.jpg",
+        image: "/images/gallery/IMG_5145.webp",
         title: "Po koszeniu",
     },
     {
-        image: "/images/gallery/gallery3.jpg",
+        image: "/images/gallery/IMG_3878.webp",
         title: "Sprzątanie ogrodu",
     },
     {
-        image: "/images/gallery/gallery4.jpg",
+        image: "/images/gallery/IMG_5155.webp",
         title: "Sadzenie drzew",
     },
     {
-        image: "/images/gallery/gallery5.jpg",
+        image: "/images/gallery/IMG_5136.webp",
         title: "Pielęgnacja roślin",
     },
     {
-        image: "/images/gallery/gallery6.jpg",
+        image: "/images/gallery/IMG_2895.webp",
         title: "Po porządkach",
     },
 ];
