@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
@@ -26,14 +26,21 @@ export default function Navbar() {
                         {/* Logo */}
                         <Link
                             href="/"
-                            className="flex items-center gap-3"
+                            className="flex items-center gap-4"
                             onClick={() => setOpen(false)}
                         >
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white">
-                                🌿
+                            <div className="relative w-[58px] h-[58px] overflow-hidden rounded-full bg-white">
+                                <Image
+                                    src="/images/logo/TomekGardens_brand_Symbol.webp"
+                                    alt="Tomek Gardens"
+                                    fill
+                                    className="object-cover scale-110 translate-y-[1px]"
+                                    priority
+                                    
+                                />
                             </div>
 
-                            <span className="font-heading text-[22px] font-semibold text-white leading-none">
+                            <span className="font-heading text-[22px] font-bold tracking-tight text-white leading-none">
                                 Tomek Gardens
                             </span>
                         </Link>
@@ -89,7 +96,7 @@ export default function Navbar() {
                                 <Link
                                     href="#contact"
                                     onClick={() => setOpen(false)}
-                                    className="mt-2 flex h-12 items-center justify-center rounded-full bg-[#b9d8a7] font-semibold text-[#17351f]"
+                                    className="mt-2 flex h-12 items-center justify-center rounded-full bg-[#b6d69a] font-semibold text-[#17351f]"
                                 >
                                     Bezpłatna wycena
                                 </Link>
