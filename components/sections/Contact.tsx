@@ -1,8 +1,68 @@
+"use client";
+
+import { useState } from "react";
+
 import Container from "@/components/ui/Container";
 import ContactInfoCard from "@/components/ui/ContactInfoCard";
 import { contactInfo } from "@/data/contact";
 
 export default function Contact() {
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState<
+        "" | "success" | "error"
+    >("");
+
+    async function handleSubmit(
+        e: React.FormEvent<HTMLFormElement>
+    ) {
+        e.preventDefault();
+
+        setLoading(true);
+        setStatus("");
+
+        const form = e.currentTarget;
+
+        const formData = new FormData(form);
+
+        formData.append(
+            "access_key",
+            "9abdcc47-623a-4d46-ae63-1254238bc5e7"
+        );
+
+        formData.append(
+            "subject",
+            "Nowe zapytanie ze strony Tomek Gardens"
+        );
+
+        formData.append(
+            "from_name",
+            "Tomek Gardens"
+        );
+
+        try {
+            const response = await fetch(
+                "https://api.web3forms.com/submit",
+                {
+                    method: "POST",
+                    body: formData,
+                }
+            );
+
+            const result = await response.json();
+
+            if (result.success) {
+                setStatus("success");
+                form.reset();
+            } else {
+                setStatus("error");
+            }
+        } catch {
+            setStatus("error");
+        }
+
+        setLoading(false);
+    }
+
     return (
         <section
             id="contact"
@@ -83,8 +143,7 @@ export default function Contact() {
                     {/* RIGHT */}
 
                     <form
-                        name="contact"
-                        method="POST"
+                        onSubmit={handleSubmit}
                         className="
         mx-auto
         w-full
@@ -102,6 +161,7 @@ export default function Contact() {
         lg:p-10
     "
                     >
+
                         <div className="space-y-5 sm:space-y-6">
 
                             <Input
@@ -139,8 +199,47 @@ export default function Contact() {
 
                         </div>
 
+                        {status === "success" && (
+                            <div
+                                className="
+                mt-6
+                rounded-2xl
+                border
+                border-green-500/30
+                bg-green-500/10
+                p-4
+                text-center
+                text-sm
+                text-green-300
+            "
+                            >
+                                ✅ Dziękujemy! Wiadomość została wysłana.
+                                Skontaktujemy się z Tobą najszybciej jak to możliwe.
+                            </div>
+                        )}
+
+                        {status === "error" && (
+                            <div
+                                className="
+                mt-6
+                rounded-2xl
+                border
+                border-red-500/30
+                bg-red-500/10
+                p-4
+                text-center
+                text-sm
+                text-red-300
+            "
+                            >
+                                ❌ Nie udało się wysłać formularza.
+                                Spróbuj ponownie za chwilę.
+                            </div>
+                        )}
+
                         <button
                             type="submit"
+                            disabled={loading}
                             className="
             mt-6
             flex
@@ -157,17 +256,18 @@ export default function Contact() {
             duration-300
             hover:-translate-y-1
             hover:bg-[#c7e7b6]
+            disabled:cursor-not-allowed
+            disabled:opacity-60
         "
                         >
-                            Wyślij zapytanie →
+                            {loading
+                                ? "Wysyłanie..."
+                                : "Wyślij zapytanie →"}
                         </button>
+
                     </form>
-
-
-
-
-
                 </div>
+
                 {/* MAP */}
 
                 <div
@@ -183,7 +283,6 @@ export default function Contact() {
         lg:max-w-full
     "
                 >
-
                     <iframe
                         src="https://www.google.com/maps?q=województwo+zachodniopomorskie&output=embed"
                         width="100%"
@@ -191,13 +290,10 @@ export default function Contact() {
                         loading="lazy"
                         className="border-0"
                     />
-
                 </div>
 
             </Container>
-
-
-        </section >
+        </section>
     );
 }
 
@@ -214,6 +310,7 @@ function Input({
 }) {
     return (
         <div>
+
             <label className="mb-2 block text-[15px] text-white/75">
                 {label}
             </label>
@@ -241,6 +338,7 @@ function Input({
                     focus:ring-[#b8d8a7]/20
                 "
             />
+
         </div>
     );
 }
@@ -258,6 +356,7 @@ function Textarea({
 }) {
     return (
         <div>
+
             <label className="mb-2 block text-[15px] text-white/75">
                 {label}
             </label>
@@ -284,6 +383,7 @@ function Textarea({
                     focus:ring-[#b8d8a7]/20
                 "
             />
+
         </div>
     );
 }
