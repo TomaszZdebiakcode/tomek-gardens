@@ -85,8 +85,6 @@ export default function Contact() {
                     <form
                         name="contact"
                         method="POST"
-                        data-netlify="true"
-                        data-netlify-honeypot="bot-field"
                         className="
         mx-auto
         w-full
@@ -104,9 +102,6 @@ export default function Contact() {
         lg:p-10
     "
                     >
-                        <input type="hidden" name="form-name" value="contact" />
-                        <input type="hidden" name="bot-field" />
-
                         <div className="space-y-5 sm:space-y-6">
 
                             <Input
