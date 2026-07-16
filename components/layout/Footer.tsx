@@ -1,3 +1,4 @@
+import { SiTiktok } from "react-icons/si";
 import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
@@ -132,7 +133,7 @@ export default function Footer() {
                                 <div className="mt-8 flex gap-4">
 
                                     <a
-                                        href="#"
+                                        href="https://www.instagram.com/tomekgardens/"
                                         className="
                                             flex h-11 w-11 items-center justify-center
                                             rounded-full border border-white/10
@@ -146,7 +147,7 @@ export default function Footer() {
                                     </a>
 
                                     <a
-                                        href="#"
+                                        href="https://www.facebook.com/tomekgardens"
                                         className="
                                             flex h-11 w-11 items-center justify-center
                                             rounded-full border border-white/10
@@ -158,7 +159,21 @@ export default function Footer() {
                                     >
                                         <FaFacebookF size={18} />
                                     </a>
-
+                                    <a
+                                        href="https://www.tiktok.com/@tomekgardens?is_from_webapp=1&sender_device=pc"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="
+                                            flex h-11 w-11 items-center justify-center
+                                            rounded-full border border-white/10
+                                            transition-all duration-300
+                                            hover:scale-105
+                                            hover:border-[#b8d8a7]
+                                            hover:bg-[#143326]
+                                        "
+                                    >
+                                        <SiTiktok size={18} />
+                                    </a>
                                 </div>
 
                             </div>

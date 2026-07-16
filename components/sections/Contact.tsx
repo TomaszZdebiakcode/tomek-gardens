@@ -83,6 +83,10 @@ export default function Contact() {
                     {/* RIGHT */}
 
                     <form
+                        name="contact"
+                        method="POST"
+                        data-netlify="true"
+                        data-netlify-honeypot="bot-field"
                         className="
         mx-auto
         w-full
@@ -100,30 +104,40 @@ export default function Contact() {
         lg:p-10
     "
                     >
+                        <input type="hidden" name="form-name" value="contact" />
+                        <input type="hidden" name="bot-field" />
 
                         <div className="space-y-5 sm:space-y-6">
 
                             <Input
+                                name="name"
                                 label="Imię"
                                 placeholder="Twoje imię"
+                                required
                             />
 
                             <Input
+                                name="phone"
                                 label="Telefon"
                                 placeholder="Numer telefonu"
+                                required
                             />
 
                             <Input
+                                name="address"
                                 label="Adres"
                                 placeholder="Ulica lub miejscowość"
                             />
 
                             <Textarea
+                                name="message"
                                 label="Zakres prac"
                                 placeholder="Opisz czego potrzebuje Twój ogród..."
+                                required
                             />
 
                             <Input
+                                name="date"
                                 label="Preferowany termin"
                                 placeholder="Np. przyszły tydzień"
                             />
@@ -131,6 +145,7 @@ export default function Contact() {
                         </div>
 
                         <button
+                            type="submit"
                             className="
             mt-6
             flex
@@ -151,7 +166,6 @@ export default function Contact() {
                         >
                             Wyślij zapytanie →
                         </button>
-
                     </form>
 
 
@@ -195,18 +209,24 @@ export default function Contact() {
 function Input({
     label,
     placeholder,
+    name,
+    required = false,
 }: {
     label: string;
     placeholder: string;
+    name: string;
+    required?: boolean;
 }) {
     return (
         <div>
-
             <label className="mb-2 block text-[15px] text-white/75">
                 {label}
             </label>
 
             <input
+                type="text"
+                name={name}
+                required={required}
                 placeholder={placeholder}
                 className="
                     h-14
@@ -226,7 +246,6 @@ function Input({
                     focus:ring-[#b8d8a7]/20
                 "
             />
-
         </div>
     );
 }
@@ -234,18 +253,23 @@ function Input({
 function Textarea({
     label,
     placeholder,
+    name,
+    required = false,
 }: {
     label: string;
     placeholder: string;
+    name: string;
+    required?: boolean;
 }) {
     return (
         <div>
-
             <label className="mb-2 block text-[15px] text-white/75">
                 {label}
             </label>
 
             <textarea
+                name={name}
+                required={required}
                 rows={5}
                 placeholder={placeholder}
                 className="
@@ -265,7 +289,6 @@ function Textarea({
                     focus:ring-[#b8d8a7]/20
                 "
             />
-
         </div>
     );
 }
