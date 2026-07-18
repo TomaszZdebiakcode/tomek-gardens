@@ -9,7 +9,7 @@ export const contactInfo = [
     {
         icon: Phone,
         title: "Telefon",
-        value: "+48 123 456 789",
+        value: "+48 735 133 563",
         href: "tel:+48123456789",
     },
     {

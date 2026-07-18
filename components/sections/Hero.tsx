@@ -11,7 +11,7 @@ export default function Hero() {
 
             <Image
                 src="/images/hero/IMG_2730.webp"
-                alt="Tomek Gardens"
+                alt="Nowoczesny ogród z trawnikiem wykonany przez TomekGardens"
                 fill
                 priority
                 className="object-cover"

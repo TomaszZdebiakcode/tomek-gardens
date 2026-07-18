@@ -112,7 +112,7 @@ export default function Footer() {
                                         className="flex items-center gap-3 text-white/75 transition duration-300 hover:text-[#b8d8a7]"
                                     >
                                         <Phone size={18} />
-                                        +48 123 456 789
+                                        +48 735 133 563
                                     </a>
 
                                     <a
