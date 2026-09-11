@@ -10,12 +10,14 @@ import Contact from "@/components/sections/Contact";
 import FAQ from "@/components/sections/FAQ";
 import DeveloperCTA from "@/components/sections/DeveloperCTA";
 import Footer from "@/components/layout/Footer";
+import FloatingContact from "@/components/ui/FloatingContact";
 import { Layout } from "lucide-react";
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <FloatingContact />
       <Hero />
       <Services />
       <Gallery />

@@ -26,6 +26,6 @@ export const contactInfo = [
     {
         icon: Clock3,
         title: "Godziny pracy",
-        value: "Pon–Sob • 8:00–18:00",
+        value: "Pon–Niedz • 8:00–20:00",
     },
 ];

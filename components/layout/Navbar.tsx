@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
@@ -8,6 +9,7 @@ import Container from "@/components/ui/Container";
 const navigation = [
     { label: "O nas", href: "#about" },
     { label: "Usługi", href: "#services" },
+    { label: "Cennik", href: "#pricing" },
     { label: "Realizacje", href: "#gallery" },
     { label: "Kontakt", href: "#contact" },
 ];
@@ -29,18 +31,17 @@ export default function Navbar() {
                             className="flex items-center gap-4"
                             onClick={() => setOpen(false)}
                         >
-                            <div className="relative w-[58px] h-[58px] overflow-hidden rounded-full bg-white">
+                            <div className="relative h-[58px] w-[58px] overflow-hidden rounded-full bg-white">
                                 <Image
                                     src="/images/logo/TomekGardens_brand_Symbol.webp"
                                     alt="Tomek Gardens"
                                     fill
-                                    className="object-cover scale-110 translate-y-[1px]"
+                                    className="translate-y-[1px] scale-110 object-cover"
                                     priority
-                                    
                                 />
                             </div>
 
-                            <span className="font-heading text-[22px] font-bold tracking-tight text-white leading-none">
+                            <span className="font-heading text-[22px] font-bold leading-none tracking-tight text-white">
                                 Tomek Gardens
                             </span>
                         </Link>
@@ -71,6 +72,8 @@ export default function Navbar() {
                         <button
                             onClick={() => setOpen(!open)}
                             className="flex h-10 w-10 items-center justify-center rounded-full text-white lg:hidden"
+                            aria-label={open ? "Zamknij menu" : "Otwórz menu"}
+                            aria-expanded={open}
                         >
                             {open ? <X size={24} /> : <Menu size={24} />}
                         </button>
@@ -79,7 +82,6 @@ export default function Navbar() {
                     {/* Mobile menu */}
                     {open && (
                         <div className="border-t border-white/10 px-5 pb-5 pt-4 lg:hidden">
-
                             <div className="flex flex-col gap-4">
 
                                 {navigation.map((item) => (
@@ -87,7 +89,7 @@ export default function Navbar() {
                                         key={item.href}
                                         href={item.href}
                                         onClick={() => setOpen(false)}
-                                        className="text-lg font-semibold text-white"
+                                        className="text-lg font-semibold text-white transition hover:text-[#d6ebc8]"
                                     >
                                         {item.label}
                                     </Link>
@@ -102,7 +104,6 @@ export default function Navbar() {
                                 </Link>
 
                             </div>
-
                         </div>
                     )}
 
